@@ -64,16 +64,14 @@ const Navbar = () => {
       <a href="#" className="icon" onclick="toggleNavbar()"><MenuIcon/></a>
         <div className="header__right" id="navbar">
         {/* <img src={logo} alt=""/> */}
-          <NavLink className="headerOption" activeClassName="active_class" to="/">Home</NavLink>
+          <NavLink className="headerOption" activeClassName="active_class" to="/">Home</NavLink>  
+          <NavLink className="headerOption" activeClassName="active_class" to="/scheme">All Schemes</NavLink>
+          <NavLink className="headerOption" activeClassName="active_class" to="/sponsor">NGO</NavLink>
           <NavLink className="headerOption" activeClassName="active_class" to="/about">About Us</NavLink>
           <NavLink className="headerOption" activeClassName="active_class" to="/contact">Contact Us</NavLink>
-          <NavLink className="headerOption" activeClassName="active_class" to="/scheme">All Schemes</NavLink>
-          <NavLink className="headerOption" activeClassName="active_class" to="/sponsor">Our Collaborators</NavLink>
-          {/* <NavLink className="headerOption" activeClassName="active_class" to="/signUp">Sign Up</NavLink> */}
           {user===null && <NavLink className="headerOption" activeClassName="active_class" to="/signUp">Sign Up</NavLink>} 
           {user != null && <><NavLink className="headerOption" activeClassName="active_class" to="/">Hello {user.displayName}! Points: {point}</NavLink>
-          <NavLink className="headerOption" activeClassName="active_class" to="/" onClick={handleLogout}>Logout</NavLink></>}
-          
+          <NavLink className="headerOption" activeClassName="active_class" to="/" onClick={handleLogout}>Logout</NavLink></>} 
           {function toggleNavbar() {
             var x = document.getElementById("navbar");
             if (x.className === "header__right") {
@@ -82,15 +80,7 @@ const Navbar = () => {
               x.className = "header__right";
             }
           }}
-
         </div>
-        
-      {/* <div className="header__right">
-        <div className="header__search"> 
-          <SearchIcon />
-          <input type="text" placeholder="Search" className='search-input'/>
-        </div> 
-      </div> */}
       </div>
     </>
   );
